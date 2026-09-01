@@ -48,6 +48,13 @@ select.input {
   cursor: pointer;
 }
 
+/* Нативный дропдаун браузер рисует на белом — без явного цвета
+   светлый текст формы (--fg) на нём не читается. */
+select.input option {
+  color: var(--ink, #0b0f0d);
+  background-color: #ffffff;
+}
+
 .textarea {
   resize: vertical;
   min-height: 96px;
