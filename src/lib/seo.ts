@@ -2,7 +2,19 @@ import type { Metadata } from 'next';
 import type { CaseStudy, FaqItem, Service } from '@/content/types';
 import { company } from '@/lib/company';
 
-export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://laime.kz';
+/** Пустое или некорректное значение env не должно ронять сборку (metadataBase = new URL). */
+function resolveSiteUrl(): string {
+  const raw = process.env.NEXT_PUBLIC_SITE_URL?.trim();
+  if (!raw) return 'https://laime.kz';
+  const withScheme = /^https?:\/\//.test(raw) ? raw : `https://${raw}`;
+  try {
+    return new URL(withScheme).origin;
+  } catch {
+    return 'https://laime.kz';
+  }
+}
+
+export const SITE_URL = resolveSiteUrl();
 export const SITE_NAME = "L'aime Agency";
 
 interface PageMeta {
