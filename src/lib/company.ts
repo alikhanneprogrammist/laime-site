@@ -17,7 +17,7 @@ function formatPhone(raw: string): string {
 }
 
 const phoneRaw = env(process.env.NEXT_PUBLIC_COMPANY_PHONE, '+77786430699');
-const instagramHandle = env(process.env.NEXT_PUBLIC_COMPANY_INSTAGRAM, 'laime.agency');
+const instagramHandle = env(process.env.NEXT_PUBLIC_COMPANY_INSTAGRAM, 'laimeagency');
 const telegramHandle = env(process.env.NEXT_PUBLIC_COMPANY_TELEGRAM, 'laime_agency');
 
 export const company = {
