@@ -1,0 +1,81 @@
+:root {
+  /* Палитра — ТЗ §8.2 */
+  --ink: #0b0f0d;
+  --ink-surface: #121714;
+  --bone: #f2f1ed;
+  --bone-70: rgba(242, 241, 237, 0.66);
+  /* 0.40 по ТЗ не проходит контраст 4.5:1 для мелких подписей (Lighthouse A11y ≥95 — тоже ТЗ §11.2) */
+  --bone-40: rgba(242, 241, 237, 0.56);
+  --line-dark: rgba(242, 241, 237, 0.1);
+  --ink-60: #3d423d;
+  --line-light: rgba(11, 15, 13, 0.1);
+  --lime: #c4f04c;
+
+  /* Сетка — ТЗ §8.4 */
+  --container-max: 1280px;
+  --container-pad: 80px;
+  --section-pad: 160px;
+  --gutter: 24px;
+
+  --radius: 4px;
+  --radius-pill: 999px;
+
+  /* Анимация — ТЗ §8.7 */
+  --ease-reveal: cubic-bezier(0.16, 1, 0.3, 1);
+  --dur-reveal: 500ms;
+  --dur-hover: 200ms;
+
+  --header-h: 72px;
+  --header-h-scrolled: 60px;
+}
+
+@media (max-width: 1024px) {
+  :root {
+    --container-pad: 40px;
+    --section-pad: 112px;
+  }
+}
+
+@media (max-width: 640px) {
+  :root {
+    --container-pad: 20px;
+    --section-pad: 80px;
+  }
+}
+
+/*
+ * Ритм тёмное/светлое: секция объявляет data-bg,
+ * дочерние компоненты используют только семантические токены.
+ */
+[data-bg='ink'] {
+  background-color: var(--ink);
+  color: var(--bone);
+  --fg: var(--bone);
+  --fg-secondary: var(--bone-70);
+  --fg-muted: var(--bone-40);
+  --line: var(--line-dark);
+  --card-bg: var(--ink-surface);
+  --accent: var(--lime);
+}
+
+[data-bg='bone'] {
+  background-color: var(--bone);
+  color: var(--ink);
+  --fg: var(--ink);
+  --fg-secondary: var(--ink-60);
+  --fg-muted: rgba(11, 15, 13, 0.58);
+  --line: var(--line-light);
+  --card-bg: transparent;
+  --accent: var(--ink);
+}
+
+[data-bg='lime'] {
+  background-color: var(--lime);
+  color: var(--ink);
+  --fg: var(--ink);
+  --fg-secondary: rgba(11, 15, 13, 0.72);
+  --fg-muted: rgba(11, 15, 13, 0.62);
+  --line: rgba(11, 15, 13, 0.16);
+  --card-bg: transparent;
+  --accent: var(--ink);
+}

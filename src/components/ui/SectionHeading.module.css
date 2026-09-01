@@ -1,0 +1,36 @@
+.wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-bottom: 64px;
+}
+
+.label {
+  max-width: none;
+}
+
+.heading {
+  max-width: 22ch;
+}
+
+/* Редакционная сетка: лейбл в левой колонке-рельсе, заголовок смещён вправо */
+@media (min-width: 901px) {
+  .split {
+    display: grid;
+    grid-template-columns: 3fr 9fr;
+    gap: var(--gutter);
+    align-items: start;
+  }
+
+  .split .label {
+    /* оптическое выравнивание mono-лейбла по первой строке заголовка */
+    padding-top: 0.9em;
+  }
+}
+
+@media (max-width: 640px) {
+  .wrap {
+    margin-bottom: 40px;
+    gap: 16px;
+  }
+}

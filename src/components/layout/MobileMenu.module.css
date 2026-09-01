@@ -1,0 +1,34 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  top: var(--header-h);
+  z-index: 90;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 40px var(--container-pad);
+  background-color: var(--ink);
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 56px;
+  color: var(--bone);
+}
+
+.bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.contacts {
+  max-width: none;
+}

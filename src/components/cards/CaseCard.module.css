@@ -1,0 +1,45 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 40px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  transition: border-color var(--dur-hover) ease;
+}
+
+.card:hover {
+  border-color: var(--fg-muted);
+  background-color: var(--card-bg);
+}
+
+.title {
+  margin-top: 4px;
+}
+
+.metrics {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-block: 16px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+}
+
+.link {
+  margin-top: auto;
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--fg);
+}
+
+.card:hover .link {
+  text-decoration: underline;
+  text-underline-offset: 6px;
+}
+
+@media (max-width: 640px) {
+  .card {
+    padding: 32px 24px;
+  }
+}

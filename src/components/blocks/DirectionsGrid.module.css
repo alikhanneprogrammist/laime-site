@@ -1,0 +1,67 @@
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--gutter);
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 40px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+.cardTitle {
+  margin-top: 8px;
+}
+
+.cardSubtitle {
+  max-width: none;
+}
+
+.points {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.point {
+  position: relative;
+  padding-left: 20px;
+  max-width: none;
+}
+
+.point::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.7em;
+  width: 8px;
+  height: 1px;
+  background-color: var(--fg-muted);
+}
+
+.link {
+  margin-top: auto;
+  padding-top: 16px;
+  font-weight: 600;
+  font-size: 15px;
+  transition: opacity var(--dur-hover) ease;
+}
+
+.link:hover {
+  opacity: 0.6;
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    padding: 32px;
+  }
+}

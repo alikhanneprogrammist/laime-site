@@ -1,0 +1,100 @@
+.header {
+  position: fixed;
+  inset-inline: 0;
+  top: 0;
+  z-index: 100;
+  background-color: transparent;
+  transition:
+    background-color var(--dur-hover) ease,
+    backdrop-filter var(--dur-hover) ease;
+}
+
+.scrolled {
+  background-color: rgba(11, 15, 13, 0.8);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--line-dark);
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  height: var(--header-h);
+  max-width: calc(var(--container-max) + var(--container-pad) * 2);
+  margin-inline: auto;
+  padding-inline: var(--container-pad);
+  transition: height var(--dur-hover) ease;
+}
+
+.scrolled .inner {
+  height: var(--header-h-scrolled);
+}
+
+.logo {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 20px;
+  letter-spacing: -0.02em;
+  color: var(--bone);
+}
+
+.nav {
+  display: flex;
+  gap: 32px;
+}
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-weight: 500;
+  font-size: 15px;
+  color: var(--bone-70);
+  transition: color var(--dur-hover) ease;
+}
+
+.link:hover {
+  color: var(--bone);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.cta {
+  min-height: 44px;
+  padding-inline: 20px;
+  font-size: 14px;
+}
+
+.burger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 7px;
+  width: 44px;
+  height: 44px;
+  padding: 10px;
+}
+
+.burgerLine {
+  display: block;
+  width: 100%;
+  height: 1.5px;
+  background-color: var(--bone);
+}
+
+@media (max-width: 900px) {
+  .nav,
+  .cta {
+    display: none;
+  }
+
+  .burger {
+    display: flex;
+  }
+}

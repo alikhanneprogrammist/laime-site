@@ -1,0 +1,172 @@
+.hero {
+  padding-top: calc(var(--header-h) + 64px);
+}
+
+.heroLabel {
+  margin-bottom: 24px;
+}
+
+.heroSubtitle {
+  max-width: 52ch;
+  margin-top: 32px;
+}
+
+.problems {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--gutter);
+}
+
+.problem {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 40px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+.problemText {
+  max-width: none;
+}
+
+.features {
+  display: flex;
+  flex-direction: column;
+  gap: 96px;
+}
+
+.feature {
+  display: grid;
+  grid-template-columns: 7fr 5fr;
+  gap: 64px;
+  align-items: center;
+}
+
+/* Чётные ряды: скриншот уходит вправо */
+.feature:nth-child(even) {
+  grid-template-columns: 5fr 7fr;
+}
+
+.feature:nth-child(even) .featureMock {
+  order: 2;
+}
+
+.featureBody {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.featureText {
+  max-width: 44ch;
+}
+
+.screensNote {
+  margin-top: -32px;
+  margin-bottom: 40px;
+}
+
+.screens {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--gutter);
+}
+
+.screenWide {
+  grid-column: 1 / -1;
+}
+
+.results {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 40px var(--gutter);
+}
+
+.source {
+  margin-top: 48px;
+}
+
+.industriesNote {
+  margin-top: -32px;
+  margin-bottom: 40px;
+}
+
+.industries {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.security {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.securityPoints {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.securityPoint {
+  position: relative;
+  padding-left: 24px;
+  max-width: 62ch;
+}
+
+.securityPoint::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.7em;
+  width: 12px;
+  height: 1px;
+  background-color: var(--fg-muted);
+}
+
+.demoSplit {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 96px;
+  align-items: start;
+}
+
+.demoSubtitle {
+  max-width: 44ch;
+  color: var(--fg-secondary);
+}
+
+@media (max-width: 900px) {
+  .problems {
+    grid-template-columns: 1fr;
+  }
+
+  .features {
+    gap: 64px;
+  }
+
+  .feature,
+  .feature:nth-child(even) {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .feature:nth-child(even) .featureMock {
+    order: 0;
+  }
+
+  .results {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .screens {
+    grid-template-columns: 1fr;
+  }
+
+  .demoSplit {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+}

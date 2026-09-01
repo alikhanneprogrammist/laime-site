@@ -1,0 +1,45 @@
+.frame {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background-color: #0b0f0d;
+}
+
+.bar {
+  display: flex;
+  gap: 6px;
+  padding: 10px 14px;
+  background-color: #0b0f0d;
+}
+
+.bar span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: rgba(242, 241, 237, 0.2);
+}
+
+.img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.caption {
+  padding: 12px 16px;
+  border-top: 1px solid var(--line);
+}
+
+/* Мобильный кадр: узкая колонка по центру, экран обрезается по высоте */
+.mobile {
+  max-width: 320px;
+  margin: 0 auto;
+}
+
+.mobile .img {
+  max-height: 560px;
+  object-fit: cover;
+  object-position: top;
+}

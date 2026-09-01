@@ -1,0 +1,105 @@
+.hero {
+  position: relative;
+  display: flex;
+  min-height: 100svh;
+  overflow: hidden;
+}
+
+/* Тонкая сетка на 5% непрозрачности. Статичная: вечная анимация паттерн-слоя
+   на слабых мобильных задерживала первую отрисовку на ~1 секунду. */
+.grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(242, 241, 237, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(242, 241, 237, 0.05) 1px, transparent 1px);
+  background-size: 120px 120px;
+  pointer-events: none;
+}
+
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  padding-top: var(--header-h);
+  padding-bottom: 32px;
+}
+
+/* Контент не ниже 88vh — на ноутбуке виден край следующего блока */
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  max-height: 88vh;
+  justify-content: center;
+  flex: 1;
+}
+
+.title {
+  max-width: 20ch;
+}
+
+.subtitle {
+  max-width: 52ch;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 32px;
+  margin-top: 8px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .enter {
+    animation: hero-enter var(--dur-reveal) var(--ease-reveal) backwards;
+  }
+
+  /* H1 — LCP-элемент: без opacity, чтобы браузер записал LCP при первой отрисовке */
+  .title.enter {
+    animation-name: hero-enter-slide;
+  }
+}
+
+@keyframes hero-enter {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes hero-enter-slide {
+  from {
+    transform: translateY(16px);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+.contacts {
+  max-width: none;
+}
+
+.contacts a {
+  transition: color var(--dur-hover) ease;
+}
+
+.contacts a:hover {
+  color: var(--bone);
+}
+
+@media (max-width: 640px) {
+  .hero {
+    min-height: 92svh;
+  }
+}

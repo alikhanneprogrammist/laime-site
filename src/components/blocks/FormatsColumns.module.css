@@ -1,0 +1,60 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--gutter);
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 40px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+.subtitle {
+  max-width: none;
+}
+
+.points {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-block: 8px 16px;
+}
+
+.point {
+  position: relative;
+  padding-left: 20px;
+  max-width: none;
+}
+
+.point::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.7em;
+  width: 8px;
+  height: 1px;
+  background-color: var(--fg-muted);
+}
+
+.button {
+  margin-top: auto;
+  align-self: flex-start;
+}
+
+.priceNote {
+  margin-top: 40px;
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .column {
+    padding: 32px 24px;
+  }
+}

@@ -1,0 +1,56 @@
+.accordion {
+  border-top: 1px solid var(--line);
+}
+
+.item {
+  border-bottom: 1px solid var(--line);
+}
+
+.summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding-block: 24px;
+  cursor: pointer;
+  list-style: none;
+}
+
+.summary::-webkit-details-marker {
+  display: none;
+}
+
+.marker {
+  position: relative;
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+}
+
+.marker::before,
+.marker::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  background-color: var(--fg-secondary);
+  transition: transform var(--dur-hover) ease;
+}
+
+.marker::before {
+  width: 16px;
+  height: 1px;
+}
+
+.marker::after {
+  width: 1px;
+  height: 16px;
+}
+
+.item[open] .marker::after {
+  transform: rotate(90deg);
+}
+
+.answer {
+  padding-bottom: 32px;
+}

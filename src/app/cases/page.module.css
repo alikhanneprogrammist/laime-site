@@ -1,0 +1,9 @@
+.page {
+  padding-top: calc(var(--header-h) + 64px);
+}
+
+.subtitle {
+  max-width: 56ch;
+  margin-top: -24px;
+  margin-bottom: 64px;
+}

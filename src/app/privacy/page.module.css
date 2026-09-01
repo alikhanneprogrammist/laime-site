@@ -1,0 +1,21 @@
+.page {
+  padding-top: calc(var(--header-h) + 64px);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 720px;
+}
+
+.updated {
+  max-width: none;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 24px;
+}

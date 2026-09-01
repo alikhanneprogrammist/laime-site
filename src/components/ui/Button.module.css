@@ -1,0 +1,64 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 56px;
+  padding-inline: 32px;
+  border-radius: var(--radius);
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.2;
+  transition:
+    background-color var(--dur-hover) ease,
+    border-color var(--dur-hover) ease,
+    color var(--dur-hover) ease;
+}
+
+.primary {
+  background-color: var(--lime);
+  color: var(--ink);
+}
+
+.primary:hover {
+  /* Затемнение на 6%, без сдвига — ТЗ §8.5 */
+  background-color: color-mix(in srgb, var(--lime) 94%, #000);
+}
+
+.primary:active {
+  /* тактильное нажатие — движение только по transform, без layout-свойств */
+  transform: translateY(1px);
+}
+
+.primary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.secondary {
+  background-color: transparent;
+  border: 1px solid var(--line);
+  color: var(--fg);
+}
+
+.secondary:hover {
+  border-color: var(--fg);
+  background-color: color-mix(in srgb, var(--fg) 6%, transparent);
+}
+
+.secondary:active {
+  transform: translateY(1px);
+}
+
+.link {
+  min-height: 44px;
+  padding-inline: 0;
+  border-radius: 0;
+  font-weight: 500;
+  color: var(--fg-secondary);
+  text-underline-offset: 6px;
+}
+
+.link:hover {
+  color: var(--fg);
+  text-decoration: underline;
+}

@@ -1,0 +1,42 @@
+.tag {
+  display: inline-flex;
+  align-items: center;
+  min-height: 32px;
+  padding: 4px 16px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-pill);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--fg-secondary);
+  transition:
+    color var(--dur-hover) ease,
+    border-color var(--dur-hover) ease,
+    background-color var(--dur-hover) ease;
+}
+
+.lg {
+  min-height: 44px;
+  padding: 8px 24px;
+  font-size: 14px;
+}
+
+.interactive {
+  cursor: pointer;
+}
+
+.interactive:hover {
+  border-color: var(--fg);
+  color: var(--fg);
+}
+
+.active {
+  background-color: var(--fg);
+  border-color: var(--fg);
+  color: var(--ink);
+}
+
+[data-bg='bone'] .active {
+  color: var(--bone);
+}

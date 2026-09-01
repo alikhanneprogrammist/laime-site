@@ -1,0 +1,28 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--gutter);
+  align-items: stretch;
+}
+
+.grid > * {
+  display: flex;
+}
+
+.grid > * > a {
+  flex: 1;
+}
+
+.all {
+  margin-top: 64px;
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .all {
+    margin-top: 40px;
+  }
+}

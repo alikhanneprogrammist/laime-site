@@ -1,0 +1,59 @@
+.metric {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.compact {
+  gap: 8px;
+}
+
+.label {
+  max-width: none;
+}
+
+.row {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 12px;
+  max-width: none;
+}
+
+.before {
+  color: var(--fg-muted);
+  font-size: 18px;
+  text-decoration-thickness: 1px;
+}
+
+.arrow {
+  color: var(--fg-muted);
+  font-size: 18px;
+}
+
+.after {
+  color: var(--fg);
+}
+
+.afterCompact {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(24px, 2.4vw, 34px);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--fg);
+}
+
+.delta {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--lime);
+}
+
+/* На светлом фоне мелкий lime не проходит по контрасту — ТЗ §8.2 */
+[data-bg='bone'] .delta,
+[data-bg='lime'] .delta {
+  color: var(--ink);
+}

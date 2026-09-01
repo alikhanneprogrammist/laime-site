@@ -1,0 +1,25 @@
+.section {
+  padding-block: 64px;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.label {
+  margin-bottom: 24px;
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px 40px;
+}
+
+.tool {
+  color: var(--bone-40);
+  transition: color var(--dur-hover) ease;
+  cursor: default;
+}
+
+.tool:hover {
+  color: var(--bone);
+}

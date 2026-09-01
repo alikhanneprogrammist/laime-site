@@ -1,0 +1,61 @@
+.hero {
+  padding-top: calc(var(--header-h) + 64px);
+}
+
+.intro {
+  max-width: 52ch;
+  margin-top: -24px;
+}
+
+.roles {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--gutter);
+}
+
+.role {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 32px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+.roleArea {
+  max-width: none;
+}
+
+.principles {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--gutter);
+}
+
+.principle {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 40px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+.principleText {
+  max-width: none;
+}
+
+.cta {
+  margin-top: 64px;
+}
+
+@media (max-width: 900px) {
+  .roles,
+  .principles {
+    grid-template-columns: 1fr;
+  }
+
+  .cta {
+    margin-top: 40px;
+  }
+}

@@ -1,0 +1,82 @@
+.timeline {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid var(--line);
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 32px 32px 0 0;
+  border-right: 1px solid var(--line);
+  margin-right: 32px;
+}
+
+.step:last-child {
+  border-right: none;
+  margin-right: 0;
+}
+
+.stepTitle {
+  margin-top: 4px;
+}
+
+.stepText {
+  max-width: none;
+}
+
+.plate {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-top: 96px;
+  padding: 40px;
+  background-color: var(--card-bg);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+.platePoints {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.platePoint {
+  position: relative;
+  padding-left: 24px;
+  max-width: 62ch;
+}
+
+.platePoint::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.7em;
+  width: 12px;
+  height: 1px;
+  background-color: var(--fg-muted);
+}
+
+@media (max-width: 900px) {
+  .timeline {
+    grid-template-columns: 1fr;
+  }
+
+  .step {
+    padding: 24px 0;
+    margin-right: 0;
+    border-right: none;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .step:last-child {
+    border-bottom: none;
+  }
+
+  .plate {
+    margin-top: 64px;
+    padding: 32px 24px;
+  }
+}
