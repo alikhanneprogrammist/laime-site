@@ -51,20 +51,33 @@ function buildTelegramMessage(lead: LeadPayload, leadId: string): string {
   return lines.join('\n');
 }
 
+async function postToTelegram(token: string, chatId: string, text: string): Promise<string> {
+  const response = await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ chat_id: chatId, text, parse_mode: 'HTML' }),
+  });
+  const body = await response.text();
+  if (!response.ok) throw new Error(`Telegram API ${response.status}: ${body}`);
+  return body;
+}
+
 async function sendToTelegram(text: string): Promise<void> {
   const token = process.env.TELEGRAM_BOT_TOKEN;
   const chatId = process.env.TELEGRAM_CHAT_ID;
   if (!token || !chatId) {
     throw new Error('TELEGRAM_BOT_TOKEN / TELEGRAM_CHAT_ID не заданы в окружении');
   }
-  const response = await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ chat_id: chatId, text, parse_mode: 'HTML' }),
-  });
-  if (!response.ok) {
-    const body = await response.text();
-    throw new Error(`Telegram API ${response.status}: ${body}`);
+  try {
+    await postToTelegram(token, chatId, text);
+  } catch (error) {
+    // Группа могла стать супергруппой — Telegram присылает новый ID,
+    // повторяем на него, пока TELEGRAM_CHAT_ID в окружении не обновят.
+    const match = error instanceof Error && error.message.match(/"migrate_to_chat_id":(-?\d+)/);
+    if (!match) throw error;
+    const newChatId = match[1];
+    console.warn(`[lead] чат мигрировал: обновите TELEGRAM_CHAT_ID на ${newChatId}`);
+    await postToTelegram(token, newChatId, text);
   }
 }
 
