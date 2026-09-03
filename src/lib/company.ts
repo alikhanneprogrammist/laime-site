@@ -16,8 +16,9 @@ function formatPhone(raw: string): string {
   return `+${digits[0]} ${digits.slice(1, 4)} ${digits.slice(4, 7)} ${digits.slice(7, 9)} ${digits.slice(9)}`;
 }
 
-const phoneRaw = env(process.env.NEXT_PUBLIC_COMPANY_PHONE, '+77786430699');
+const phoneRaw = env(process.env.NEXT_PUBLIC_COMPANY_PHONE, '+77472271775');
 const instagramHandle = env(process.env.NEXT_PUBLIC_COMPANY_INSTAGRAM, 'laimeagency');
+const tiktokHandle = env(process.env.NEXT_PUBLIC_COMPANY_TIKTOK, 'laimeagency');
 const telegramHandle = env(process.env.NEXT_PUBLIC_COMPANY_TELEGRAM, 'laime_agency');
 
 export const company = {
@@ -25,9 +26,11 @@ export const company = {
   whatsappUrl: `https://wa.me/${phoneRaw.replace(/\D/g, '')}`,
   instagramHandle,
   instagramUrl: `https://instagram.com/${instagramHandle}`,
+  tiktokHandle,
+  tiktokUrl: `https://www.tiktok.com/@${tiktokHandle}`,
   telegramHandle: `@${telegramHandle}`,
   telegramUrl: `https://t.me/${telegramHandle}`,
-  email: env(process.env.NEXT_PUBLIC_COMPANY_EMAIL, 'hello@laime.kz'),
+  email: env(process.env.NEXT_PUBLIC_COMPANY_EMAIL, 'laimeagency@gmail.com'),
   address: env(process.env.NEXT_PUBLIC_COMPANY_ADDRESS, 'Астана, Казахстан'),
   requisites: env(
     process.env.NEXT_PUBLIC_COMPANY_REQUISITES,

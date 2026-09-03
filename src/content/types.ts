@@ -84,6 +84,8 @@ export interface CommonDictionary {
     whatsappLabel: string;
     instagramUrl: string;
     instagramLabel: string;
+    tiktokUrl: string;
+    tiktokLabel: string;
     telegramUrl: string;
     telegramHandle: string;
     email: string;

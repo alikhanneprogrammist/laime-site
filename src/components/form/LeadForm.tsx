@@ -193,7 +193,7 @@ export function LeadForm({ dict, variant = 'lead' }: LeadFormProps) {
           target="_blank"
           rel="noopener noreferrer"
           className={styles.altLink}
-          onClick={() => trackEvent('whatsapp_click', { placement: 'form' })}
+          data-placement="form"
         >
           {f.orWhatsapp}
         </a>

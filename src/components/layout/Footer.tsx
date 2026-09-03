@@ -33,6 +33,9 @@ export function Footer({ dict }: { dict: CommonDictionary }) {
             <a href={dict.contacts.instagramUrl} className={styles.link}>
               {dict.contacts.instagramLabel}
             </a>
+            <a href={dict.contacts.tiktokUrl} className={styles.link}>
+              {dict.contacts.tiktokLabel}
+            </a>
             <a href={`mailto:${dict.contacts.email}`} className={styles.link}>
               {dict.contacts.email}
             </a>

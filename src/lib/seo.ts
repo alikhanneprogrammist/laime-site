@@ -46,7 +46,7 @@ export function organizationJsonLd() {
     name: SITE_NAME,
     url: SITE_URL,
     logo: `${SITE_URL}/favicon.svg`,
-    sameAs: [company.instagramUrl],
+    sameAs: [company.instagramUrl, company.tiktokUrl],
   };
 }
 

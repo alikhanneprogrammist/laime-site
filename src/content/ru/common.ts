@@ -22,6 +22,8 @@ export const common: CommonDictionary = {
     whatsappLabel: 'WhatsApp',
     instagramUrl: company.instagramUrl,
     instagramLabel: 'Instagram',
+    tiktokUrl: company.tiktokUrl,
+    tiktokLabel: 'TikTok',
     telegramUrl: company.telegramUrl,
     telegramHandle: company.telegramHandle,
     email: company.email,

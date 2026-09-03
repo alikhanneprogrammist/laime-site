@@ -6,6 +6,7 @@ import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { WhatsAppFab } from '@/components/layout/WhatsAppFab';
 import { JsonLd } from '@/components/seo/JsonLd';
+import { Analytics } from '@/components/seo/Analytics';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -40,6 +41,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <main>{children}</main>
         <Footer dict={dict.common} />
         <WhatsAppFab dict={dict.common} />
+        <Analytics />
       </body>
     </html>
   );

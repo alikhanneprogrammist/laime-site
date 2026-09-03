@@ -53,6 +53,8 @@ export function MobileMenu({ dict, links, isOpen, onClose }: MobileMenuProps) {
           {' · '}
           <a href={dict.contacts.instagramUrl}>{dict.contacts.instagramLabel}</a>
           {' · '}
+          <a href={dict.contacts.tiktokUrl}>{dict.contacts.tiktokLabel}</a>
+          {' · '}
           <a href={`mailto:${dict.contacts.email}`}>{dict.contacts.email}</a>
         </p>
       </div>
